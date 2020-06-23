@@ -38,7 +38,10 @@ public class Swagger2Config {
                 //为有@ApiOperation注解的方法生成API文档
 //                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 .paths(PathSelectors.any())
-                .build();
+                .build()
+                //添加登录认证
+                .securitySchemes(securitySchemes())
+                .securityContexts(securityContexts());
     }
 
     private ApiInfo apiInfo() {
