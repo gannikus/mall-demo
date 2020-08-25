@@ -2,8 +2,14 @@ package com.gzm.mall.mbg.model;
 
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Table(name = "cms_help_category")
 public class CmsHelpCategory implements Serializable {
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String name;

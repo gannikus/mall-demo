@@ -55,3 +55,7 @@ mybatis:
   mapper-locations:
     - classpath:mapper/*.xml
     - classpath*:com/**/mapper/*.xml
+
+mapper:
+  mappers: com.gzm.mall.mbg.BaseMapper
+  identity: MYSQL
