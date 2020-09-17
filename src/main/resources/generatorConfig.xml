@@ -30,15 +30,15 @@
             <property name="nullCatalogMeansCurrent" value="true" />
         </jdbcConnection>
         <!--指定生成model的路径-->
-        <javaModelGenerator targetPackage="com.gzm.mall.mbg.model" targetProject="mall-demo\src\main\java"/>
+        <javaModelGenerator targetPackage="com.gzm.mall.mbg.model" targetProject="src\main\java"/>
         <!--指定生成mapper.xml的路径-->
-        <sqlMapGenerator targetPackage="com.gzm.mall.mbg.mapper" targetProject="mall-demo\src\main\resources"/>
+        <sqlMapGenerator targetPackage="com.gzm.mall.mbg.mapper" targetProject="src\main\resources"/>
         <!--指定生成mapper接口的的路径-->
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.gzm.mall.mbg.mapper"
-                             targetProject="mall-demo\src\main\java"/>
+                             targetProject="src\main\java"/>
         <!--生成全部表tableName设为%-->
-        <table tableName="%">
-            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        <table tableName="spring_scheduled_cron">
+            <generatedKey column="cron_id" sqlStatement="MySql" identity="true"/>
         </table>
     </context>
 </generatorConfiguration>
