@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gzm.mall.mbg.mapper.SpringScheduledCronMapper">
+  <resultMap id="BaseResultMap" type="com.gzm.mall.mbg.model.SpringScheduledCron">
+    <id column="cron_id" jdbcType="INTEGER" property="cronId" />
+    <result column="cron_key" jdbcType="VARCHAR" property="cronKey" />
+    <result column="cron_expression" jdbcType="VARCHAR" property="cronExpression" />
+    <result column="task_explain" jdbcType="VARCHAR" property="taskExplain" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    cron_id, cron_key, cron_expression, task_explain, status
+  </sql>
+
+  <select id="findByCronKey" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from spring_scheduled_cron
+    where cron_key = #{cronKey,jdbcType=VARCHAR}
+  </select>
+</mapper>
